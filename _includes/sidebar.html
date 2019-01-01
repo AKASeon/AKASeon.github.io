@@ -25,6 +25,8 @@
       {% endif %}
     {% endfor %}
 
+    <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+  </nav>
 <!-- Category -->
 
   <div>
@@ -89,7 +91,6 @@
 
 <!--  -->
 
-    <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
   <div class="sidebar-item">
     <p>
       &copy; {{ site.time | date: '%Y' }}. All rights reserved.
@@ -97,3 +98,8 @@
   </div>
 </div>
 
+<script>
+  window.addEventListener('hashchange', function(){
+    location.reload();
+  });
+</script>
