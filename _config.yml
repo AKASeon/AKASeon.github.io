@@ -16,7 +16,7 @@ github_username: akaseon
 # Build settings
 #markdown: kramdown
 #theme: minima
-theme: lanyon
+#theme: lanyon
 
 plugins:
   - jekyll-paginate
