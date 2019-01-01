@@ -17,19 +17,19 @@ tag_dir: tag/
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate-v2
+#  - jekyll-paginate-v2
 
 # paginate
-permalink: /:year/:month/
-pagination:
-  enabled: true
-  per_page: 12
-  sort_reverse: true
-  sort_field: 'date'
-  title: ':title'
-  trail:
-    before: 2
-    after: 2
+#permalink: /:year/:month/
+#pagination:
+#  enabled: true
+#  per_page: 12
+#  sort_reverse: true
+#  sort_field: 'date'
+#  title: ':title'
+#  trail:
+#    before: 2
+#    after: 2
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
