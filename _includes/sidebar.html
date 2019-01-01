@@ -9,7 +9,7 @@
   </div>
 
   <nav class="sidebar-nav">
-    <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}/">Home</a>
+    <a class="sidebar-nav-item{% if page.url == site.url %} active{% endif %}" href="{{ site.url }}/">Home</a>
 
     {% comment %}
       The code below dynamically generates a sidebar nav of pages with
@@ -58,13 +58,13 @@
         {% assign min = tag[1].size %}
         {% endif %}
         {% endfor %}
-  
+
         {% if max == min %}
         {% assign diff = 1 %}
         {% else %}
         {% assign diff = max | minus: min %}
         {% endif %}
-  
+
         {% for tag in site.tags %}
         {% assign temp = tag[1].size | minus: min | times: 36 | divided_by: diff %}
         {% assign base = temp | divided_by: 4 %}

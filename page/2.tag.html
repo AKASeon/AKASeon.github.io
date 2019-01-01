@@ -25,12 +25,14 @@ type: page
 
 <script>
   var hash = decodeURI(window.location.hash.substr(1));
+
   var postList = new Vue({
     el: '#post-list',
     data: {
       posts: []
     }
   });
+
   axios.get('/posts.json')
   .then(function (response) {
     postList.posts = response.data.posts;
