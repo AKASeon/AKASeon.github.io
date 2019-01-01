@@ -1,0 +1,67 @@
+---
+layout: post
+title:  "vimrc 설정"
+date: 2015-12-07
+categories: Effective_C++
+tags: C++ Effective_C++
+---
+이 문서는 매번 새로운 사항이 있으면 갱신 한다.
+update date : 2015-12-07
+
+```sh
+" Uncomment the following to have Vim jump to the last position when"
+" reopening a file"
+if has("autocmd")
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
+
+" Syntax Highlighting "
+if has(“syntax”)                    " copy 시 오류 수정해야함. "
+    syntax on
+endif
+
+set autoindent                      " 이전 라인 들여쓰기 하면 개행시 다음 라인에도 자동 적용 "
+set smartindent                     " autoindent 와 비슷 몇몇 c언어의 문법에 대해 좀더 똑똑하게 들여 쓰기를 적용 "
+set cindent                         " 좀더 똑똑하게 c 언어의 문법에 맞게 들여 쓰기 적용 "
+
+set scrolloff=4                     " 스크롤 할때 위아래 줄 유지, 화살표 아래로 내리다 보면 아래에서 4줄 유지한 상황에서 스크롤 됨 "
+set tabstop=4                       " 탭을 4칸 "
+set softtabstop=4                   " tab키를 입력 하였을때 입력될 너비 "
+set shiftwidth=4                    " 자동 들여쓰기 4칸 "
+set shiftround                      " "
+set expandtab                       " 탭대신 스페이스 "
+
+set textwidth=100                   " 글자수 100자 이상이면 자동 개행 "
+
+set hlsearch                        " / ? 명령등으로 찾은 문자열을 하이라이트"
+set incsearch                       " 글자를 치면 그에 맞는것을 치는 동안 보여주기 "
+
+"filetype on "                      " 파일 종류에 따른 구문을 강조 표시 "
+
+set ls=2                            " 항상 status 라인을 표시 "
+
+set ut=300000                       " 몇 milliseconds 후에 swap 파일 생성 5분 "
+set uc=100                          " 몇 글자 이상 써야 swap 파일 생성 "
+
+" For python http://www.vim.org/scripts/script.php?script_id=790 "
+let python_version_2=1              " python 2 문법"
+let python_highlight_all=1          " 모든 강조 기능을 on"
+
+" Python Tab-complete http://www.vim.org/scripts/script.php?script_id=850 "
+filetype plugin on
+let g:pydiction_location='~/.vim/pydiction'
+let g:pydiction_menu_height=3
+
+" Show Function name"
+fun! ShowFuncName()
+    let lnum = line(".")
+    let col = col(".")
+    echohl ModeMsg
+    echo getline(search("^[^ \t#/]\\{2}.*[^:]\s*$", 'bW'))
+    echohl None
+    call search("\\%" . lnum . "l" . "\\%" . col . "c")
+endfun
+
+" Key Map "
+map f :call ShowFuncName() <CR>
+```

@@ -1,0 +1,44 @@
+
+title: Akaseon Study Note
+email: akaseon@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: jekyllrb
+github_username: akaseon
+
+# Build settings
+markdown: kramdown
+#theme: minima
+theme: lanyon
+
+category_dir: category/
+tag_dir: tag/
+
+plugins:
+  - jekyll-feed
+  - jekyll-paginate-v2
+
+# paginate
+permalink: /:year/:month/
+pagination:
+  enabled: true
+  per_page: 12
+  sort_reverse: true
+  sort_field: 'date'
+  title: ':title'
+  trail:
+    before: 2
+    after: 2
+
+# Exclude from processing.
+# The following items will not be processed, by default. Create a custom list
+# to override the default setting.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+#   - node_modules
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
