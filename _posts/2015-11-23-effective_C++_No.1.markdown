@@ -2,6 +2,7 @@
 layout: post
 title:  "Effective C++ No.1 c++ 언어를 언어들의 연합체로 바라보는 안목은 필수"
 date: 2015-11-23
+review: 2019-01-20 2019-01-19
 categories: Effective_C++
 tags: C++ Effective_C++
 ---
