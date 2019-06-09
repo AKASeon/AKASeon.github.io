@@ -123,7 +123,7 @@ ABEntry::ABEntry( const std::string            & name,
 2. 네임스페이스 요효범위에 적의된 객체  
 3. 클래스 안에 static 으로 선언된 객체  
 4. 함수안에서 static 으로 선언된 객체  
-5. 파일 유효범위에서 static 으로 정의도니 객체  
+5. 파일 유효범위에서 static 으로 정의된 객체  
 
 함수 안에 있는 정적객체를 지역 정적 객체(local static object)라고 한다.  
 나머지는 비지역 정적객체(non-local static object)라고 한다.  
